@@ -64,11 +64,13 @@ function onSubmit(params) {
           refs.countryList.insertAdjacentHTML(
             'beforeend',
             `<li>
-    <img class="country-list__image" src="${element.flags.png}" alt="${element.name.official}" heigth='20' width='35' >
+    <img class="country-list__image" src="${element.flags.png}" alt="${
+              element.name.official
+            }" heigth='20' width='35' >
     <p>${element.name.official}</p>
     <p>capital: ${element.capital}</p>
     <p>population: ${element.population}</p>
-    <p>languages:${element.languages}</p>
+    <p>languages:${Object.values(element.languages)}</p>
   </li>`
           );
         });
