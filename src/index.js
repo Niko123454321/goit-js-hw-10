@@ -11,7 +11,6 @@ const DEBOUNCE_DELAY = 300;
 const refs = {
   inputBox: document.querySelector('input#search-box'),
   countryList: document.querySelector('.country-list'),
-  countryInfo: document.querySelector('.country-info'),
 };
 
 refs.inputBox.addEventListener('input', debounce(onSubmit, DEBOUNCE_DELAY));
@@ -50,7 +49,7 @@ function onSubmit(params) {
           refs.countryList.insertAdjacentHTML(
             'beforeend',
             `<li class="country-list__item">
-    <img class="country-list__image" src="${element.flags.png}" alt="${element.name.official}" heigth='20' width='35' >
+    <img class="country-list__image" src="${element.flags.png}" alt="${element.name.official}" width='25' >
     <p class="country-list_name">${element.name.official}</p>
 </li>`
           );
@@ -67,10 +66,13 @@ function onSubmit(params) {
     <img class="country-list__image" src="${element.flags.png}" alt="${
               element.name.official
             }" heigth='20' width='35' >
-    <p>${element.name.official}</p>
-    <p>capital: ${element.capital}</p>
-    <p>population: ${element.population}</p>
-    <p>languages:${Object.values(element.languages)}</p>
+    <p class="name_official">${element.name.official}</p>
+    <p ><span class="name_text">Capital:
+  </span> ${element.capital}</p>
+    <p ><span class="name_text">Population: 
+  </span>${element.population}</p>
+    <p ><span class="name_text">Languages: 
+  </span>${Object.values(element.languages)}</p>
   </li>`
           );
         });

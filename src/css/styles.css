@@ -18,3 +18,30 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+li {
+  list-style-type: none;
+  /* Убираем маркеры */
+}
+ul {
+  margin-left: 0;
+  /* Отступ слева в браузере IE и Opera */
+  padding-left: 0;
+  /* Отступ слева в браузере Firefox, Safari, Chrome */
+}
+
+.name_official {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.name_text {
+  font-weight: 700;
+}
+
+.country-list__image {
+  display: inline-block;
+}
+.country-list_name {
+  display: inline-block;
+}
