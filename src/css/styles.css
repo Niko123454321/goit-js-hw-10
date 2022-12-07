@@ -33,6 +33,7 @@ ul {
 .name_official {
   font-weight: 700;
   font-size: 32px;
+  display: inline-block;
 }
 
 .name_text {
