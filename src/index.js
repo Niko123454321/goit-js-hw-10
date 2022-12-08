@@ -4,8 +4,6 @@ import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import './css/styles.css';
 
-// import cardTp1 from './templates/countries-card.hbs';
-
 const DEBOUNCE_DELAY = 300;
 
 const refs = {
@@ -30,6 +28,9 @@ function onSubmit() {
     `${BASE_URL}/name/${box}?fields=name,capital,population,flags,languages`
   )
     .then(response => {
+      if (response.status === 404) {
+        return errFail();
+      }
       return response.json();
     })
     .then(countrie => {
@@ -44,17 +45,10 @@ function onSubmit() {
         return oneCountryMarkup();
       }
     })
-
     .catch(error => {
-      return errFail();
+      console.log(error);
     });
 }
-
-//   name.official - повна назва країни
-// capital - столиця
-// population - населення
-// flags.svg - посилання на зображення прапора
-// languages - масив мов
 
 function clear() {
   refs.countryList.innerHTML = '';
